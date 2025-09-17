@@ -1,0 +1,23 @@
+Ignorar archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+Ignorar directorios de configuración de editores de código
+.vscode/
+.idea/
+
+Ignorar archivos de registro
+.log
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+Ignorar directorios de dependencias (buena práctica)
+node_modules/
+
+Ignorar archivos de compilación o empaquetado
+dist/
+build/
+*.zip
+*.rar
