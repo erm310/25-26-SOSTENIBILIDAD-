@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Sostenibilidad Aplicada al Sistema Productivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!--
+    Plan de Narrativa y Estructura:
+    La narrativa transforma la presentación del curso en un viaje visual para el estudiante, fluyendo desde el "Porqué" (Introducción), al "¿Qué aprenderé?" (los 6 RAs), "¿Cómo se organiza?" (Cronología), y finalmente "¿Cómo se me evaluará?" (Evaluación). La estructura es una sola página vertical con secciones claras y visuales.
+
+    Selección de Visualizaciones:
+    - Dato Clave (Héroe): Objetivo: Informar. Método: HTML/CSS. Justificación: Captura la atención con un dato impactante. Confirmado NO SVG.
+    - Gráfico de Barras (RA2): Objetivo: Comparar. Librería: Chart.js. Justificación: Compara eficazmente las fuentes de residuos electrónicos. Confirmado NO SVG.
+    - Diagrama de Flujo (RA3 y RA4): Objetivo: Organizar. Método: HTML/Tailwind. Justificación: Muestra procesos de forma clara sin usar SVG o Mermaid. Confirmado NO SVG.
+    - Gráfico de Donut (RA5 y Evaluación): Objetivo: Informar (composición). Librería: Chart.js. Justificación: Visualiza partes de un todo de forma sencilla. Confirmado NO SVG.
+    - Gráfico de Radar (RA6): Objetivo: Comparar. Librería: Chart.js. Justificación: Ideal para comparar una entidad (empresa) a través de múltiples criterios (ASG). Confirmado NO SVG.
+    - Línea de Tiempo (Cronología): Objetivo: Mostrar Cambio. Método: HTML/Tailwind. Justificación: Presenta la secuencia temporal del curso de forma intuitiva. Confirmado NO SVG.
+    - NI Mermaid JS NI SVG han sido utilizados en este documento.
+    - Paleta de colores seleccionada: Energetic & Playful.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F7F5;
+            color: #252A34;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #FF2E63;
+            border: 4px solid #08D9D6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl font-black text-gray-800 uppercase tracking-wider">Módulo de Sostenibilidad</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#08D9D6] mt-2">Aplicada al Sistema Productivo</h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Tu formación como técnico profesional preparado para el futuro empieza aquí.</p>
+        </header>
+
+        <section class="my-16 p-8 rounded-lg glass-card text-center">
+             <h3 class="text-xl font-bold text-gray-800 mb-2">Un dato clave para empezar</h3>
+             <p class="text-6xl md:text-8xl font-black text-[#08D9D6]">85%</p>
+             <p class="text-lg text-gray-600 mt-2">Es la cantidad aproximada de residuos electrónicos que <span class="font-bold text-gray-800">NO se reciclan</span> correctamente a nivel mundial. Vuestro papel para cambiar esto es fundamental.</p>
+        </section>
+
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-12">¿Qué Aprenderás en este Módulo? <br> <span class="text-[#08D9D6]">Los 6 Resultados de Aprendizaje (RA)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="p-6 rounded-lg glass-card h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-[#08D9D6]">RA1: Entender la Sostenibilidad</h3>
+                    <p class="mt-2 flex-grow">Sentarás las bases: qué son los criterios ASG (Ambiental, Social y de Gobernanza), la Agenda 2030 y los Objetivos de Desarrollo Sostenible (ODS). Es el lenguaje que usan las empresas líderes.</p>
+                    <div class="mt-4 text-center">
+                        <span class="text-3xl p-2" title="Fin de la Pobreza">🤝</span>
+                        <span class="text-3xl p-2" title="Energía Asequible y No Contaminante">💡</span>
+                        <span class="text-3xl p-2" title="Producción y Consumo Responsables">♻️</span>
+                        <span class="text-3xl p-2" title="Acción por el Clima">🌍</span>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-lg glass-card h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-[#08D9D6]">RA2: Identificar Retos Clave</h3>
+                    <p class="mt-2 flex-grow">Analizarás los grandes desafíos como el cambio climático y, sobre todo, la gestión de residuos electrónicos, un problema crítico en nuestro sector.</p>
+                    <div class="chart-container mt-4">
+                        <canvas id="ra2Chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-lg glass-card h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-[#08D9D6]">RA3: Aplicar en tu Trabajo</h3>
+                    <p class="mt-2 flex-grow">Aprenderás a tomar decisiones sostenibles en tu día a día: desde elegir equipos eficientes hasta optimizar tus rutas para reducir la huella de carbono.</p>
+                    <div class="mt-4 p-4 border border-dashed border-gray-500 rounded-lg text-sm">
+                        <div class="flex items-center">
+                            <span class="text-xl mr-3">🔧</span> <p>Nueva Instalación</p> <span class="text-[#08D9D6] mx-2 font-bold">&rarr;</span>
+                        </div>
+                        <div class="flex items-center ml-8">
+                           <p>Elegir equipo eficiente</p> <span class="text-[#08D9D6] mx-2 font-bold">&rarr;</span>
+                        </div>
+                         <div class="flex items-center ml-16">
+                           <p>Gestionar residuo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-lg glass-card h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-[#08D9D6]">RA4: Adoptar la Economía Circular</h3>
+                    <p class="mt-2 flex-grow">Descubrirás un modelo que reemplaza el "usar y tirar". Se enfoca en reducir, reutilizar, reparar y reciclar, algo vital para los valiosos materiales de los equipos electrónicos.</p>
+                     <div class="mt-4 p-4 space-y-2 text-center">
+                        <p class="font-bold">Lineal: <span class="font-normal">Fabricar &rarr; Usar &rarr; Tirar 🗑️</span></p>
+                        <p class="font-bold text-[#08D9D6]">Circular: <span class="font-normal">Fabricar &rarr; Usar &harr; Reparar &harr; Reutilizar ♻️</span></p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-lg glass-card h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-[#08D9D6]">RA5: Minimizar tu Impacto</h3>
+                    <p class="mt-2 flex-grow">Aplicarás estrategias prácticas para reducir tu huella ambiental, desde la gestión de cables hasta el cálculo del impacto energético de una instalación.</p>
+                    <div class="chart-container mt-4">
+                        <canvas id="ra5Chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-lg glass-card h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-[#08D9D6]">RA6: Analizar Empresas Reales</h3>
+                    <p class="mt-2 flex-grow">Como proyecto final, y en tu formación en la empresa, analizarás el plan de sostenibilidad de una compañía del sector. Aprenderás a "leer" sus informes y evaluar su desempeño real.</p>
+                    <div class="chart-container mt-4">
+                        <canvas id="ra6Chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-12">Planificación del Módulo <br> <span class="text-[#08D9D6]">Tu Hoja de Ruta Trimestral</span></h2>
+            <div class="relative max-w-2xl mx-auto pl-8">
+                <div class="absolute left-0 h-full border-l-4 border-gray-300"></div>
+                <div class="relative pl-8 py-6 timeline-item">
+                    <h3 class="text-xl font-bold">1º Trimestre</h3>
+                    <p class="text-gray-600">UD1: Introducción a la Sostenibilidad (RA1)</p>
+                    <p class="text-gray-600">UD2: Retos Ambientales (RA2)</p>
+                </div>
+                <div class="relative pl-8 py-6 timeline-item">
+                    <h3 class="text-xl font-bold">2º Trimestre</h3>
+                    <p class="text-gray-600">UD3: Retos Sociales (RA3)</p>
+                    <p class="text-gray-600">UD4: Economía Verde y Circular (RA4)</p>
+                </div>
+                <div class="relative pl-8 py-6 timeline-item">
+                    <h3 class="text-xl font-bold">3º Trimestre</h3>
+                    <p class="text-gray-600">UD5: Sostenibilidad en la Empresa (RA5)</p>
+                    <p class="text-gray-600">UD6: Informes y Certificados (RA6)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-12">¿Cómo se Evalúa? <br> <span class="text-[#08D9D6]">Claves para Aprobar</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="p-6 rounded-lg glass-card">
+                    <h3 class="text-2xl font-bold text-[#08D9D6] mb-4">La Regla de Oro</h3>
+                    <p class="text-lg mb-4">La evaluación es continua. Para aprobar el módulo, es imprescindible obtener una calificación mínima de...</p>
+                    <p class="text-8xl font-black text-center text-gray-800 my-4">5</p>
+                    <p class="text-lg text-center font-bold">...en CADA UNO de los 6 Resultados de Aprendizaje. No vale con hacer la media.</p>
+                </div>
+                <div class="p-6 rounded-lg glass-card">
+                    <h3 class="text-2xl font-bold text-center text-[#08D9D6] mb-4">Ponderación de la Nota Final</h3>
+                     <p class="text-center mb-4">Cada RA tiene un peso casi idéntico en tu calificación final, reforzando la importancia de dominar todas las áreas del módulo.</p>
+                    <div class="chart-container">
+                        <canvas id="evalChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-8 mt-12 border-t border-gray-300">
+            <p class="text-gray-500">Profesor: José Godoy Romero | 1º Instalaciones de Telecomunicaciones</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const chartTextColor = '#252A34';
+        const gridColor = 'rgba(0, 0, 0, 0.1)';
+        const chartColors = ['#08D9D6', '#FF2E63', '#252A34', '#6c757d', '#198754', '#ffc107'];
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const ra2ChartCtx = document.getElementById('ra2Chart').getContext('2d');
+        new Chart(ra2ChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Equipos Pequeños (Móviles, routers)', 'Equipos Grandes (Servidores)', 'Pantallas y Monitores', 'Lámparas y Bombillas'].map(wrapLabel),
+                datasets: [{
+                    label: 'Millones de Toneladas Anuales',
+                    data: [20.4, 14.1, 7.6, 1],
+                    backgroundColor: chartColors,
+                    borderColor: 'rgba(0,0,0,0)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        ticks: { color: chartTextColor },
+                        grid: { color: gridColor }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor },
+                        grid: { color: 'rgba(0,0,0,0)' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        const ra5ChartCtx = document.getElementById('ra5Chart').getContext('2d');
+        new Chart(ra5ChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Transporte (Vehículo)', 'Consumo Energético de Equipos', 'Gestión de Residuos', 'Otros'],
+                datasets: [{
+                    label: 'Huella de Carbono del Técnico',
+                    data: [45, 35, 15, 5],
+                    backgroundColor: chartColors,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor }
+                    },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+        
+        const ra6ChartCtx = document.getElementById('ra6Chart').getContext('2d');
+        new Chart(ra6ChartCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Impacto Ambiental', 'Derechos Sociales', 'Gobernanza Ética', 'Innovación Sostenible', 'Relación con Comunidad'].map(wrapLabel),
+                datasets: [{
+                    label: 'Puntuación de Sostenibilidad de Empresa X',
+                    data: [7, 8, 6, 9, 7],
+                    fill: true,
+                    backgroundColor: 'rgba(8, 217, 214, 0.2)',
+                    borderColor: '#08D9D6',
+                    pointBackgroundColor: '#08D9D6',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#08D9D6'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: gridColor },
+                        grid: { color: gridColor },
+                        pointLabels: { color: chartTextColor, font: {size: 10} },
+                        ticks: {
+                           color: chartTextColor,
+                           backdropColor: 'rgba(255,255,255,0.7)',
+                           stepSize: 2
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        const evalChartCtx = document.getElementById('evalChart').getContext('2d');
+        new Chart(evalChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['RA1', 'RA2', 'RA3', 'RA4', 'RA5', 'RA6'],
+                datasets: [{
+                    label: 'Ponderación (%)',
+                    data: [16.6, 16.6, 16.6, 16.6, 17.0, 16.6],
+                    backgroundColor: chartColors,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor }
+                    },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
