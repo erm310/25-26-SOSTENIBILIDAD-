@@ -10,12 +10,13 @@ El contenido ha sido generado con la asistencia de herramientas de Inteligencia 
 
 A continuación se listan los enlaces directos para visualizar los recursos web alojados en este repositorio:
 
-Infografía: Módulo Sostenibilidad
-Acceder a la Infografía
+Infografía: Módulo Sostenibilidad 
+
+[Sost.html](https://github.com/user-attachments/files/22382546/Sost.html)
 
 Infografía: Fundamentos de la Telefonía Analógica
 
-Acceder a la Infografía
+[RA1_Sost.html](https://github.com/user-attachments/files/22382573/RA1_Sost.html)
 
 (Nota: Si ha subido más archivos HTML, puede añadirlos a esta lista siguiendo el mismo formato.)
 
